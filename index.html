@@ -1,62 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <script>
-  // 1. Immediately invoked function to prevent theme flashing
-      (function () {
-        const savedTheme = localStorage.getItem('global-portfolio-theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-    
-        document.documentElement.setAttribute('data-theme', initialTheme);
-      })();
+        // 1. Immediately invoked function to prevent theme flashing
+        (function () {
+            const savedTheme = localStorage.getItem('global-portfolio-theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', initialTheme);
+        })();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shrouq Alghamdi | Senior Data Scientist & Strategy Consultant</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configure Tailwind to support custom data-theme attributes seamlessly
+        tailwind.config = {
+            darkMode: ['selector', '[data-theme="dark"]'],
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-white text-slate-700 font-sans antialiased selection:bg-blue-600 selection:text-white">
+<body class="bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 font-sans antialiased selection:bg-blue-600 selection:text-white transition-colors duration-300">
 
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200">
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-white/90 dark:bg-slate-900/90 border-b border-slate-200 dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">Shrouq Alghamdi</span>
-            <nav class="space-x-6 text-sm font-semibold text-slate-500">
-                <a href="#about" class="hover:text-blue-600 transition">About</a>
-                <a href="#skills" class="hover:text-blue-600 transition">Expertise</a>
-                <a href="#portfolio" class="hover:text-blue-600 transition">Portfolio</a>
-                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
-            </nav>
+            <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-700 to-blue-500 dark:from-blue-400 dark:to-blue-600 bg-clip-text text-transparent">Shrouq Alghamdi</span>
+            <div class="flex items-center space-x-6">
+                <nav class="space-x-6 text-sm font-semibold text-slate-500 dark:text-slate-400">
+                    <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">About</a>
+                    <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Expertise</a>
+                    <a href="#portfolio" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Portfolio</a>
+                    <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contact</a>
+                </nav>
+                <button id="global-theme-toggle" class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm font-semibold focus:outline-none transition"></button>
+            </div>
         </div>
     </header>
 
     <section id="about" class="max-w-4xl mx-auto px-6 pt-20 pb-6 text-center sm:text-left">
-        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
-            Architecting Intelligent Pipelines & <span class="bg-gradient-to-r from-blue-700 to-blue-600 bg-clip-text text-transparent">Data-Driven Solutions</span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+            Architecting Intelligent Pipelines & <span class="bg-gradient-to-r from-blue-700 to-blue-600 dark:from-blue-400 dark:to-blue-500 bg-clip-text text-transparent">Data-Driven Solutions</span>
         </h1>
         
-        <p class="text-lg text-slate-600 max-w-2xl leading-relaxed mb-4">
+        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed mb-4">
             I'm a senior-level Data Scientist and Strategy Consultant specializing in machine learning systems, statistical modeling, predictive analytics, fraud detection, and recommender systems. I design robust data pipelines, implement advanced algorithms, and translate complex technical ecosystems into high-impact executive strategies across varying industry verticals.
         </p>
 
-        <p class="text-sm text-slate-500 max-w-xl leading-relaxed mb-6 italic">
+        <p class="text-sm text-slate-500 dark:text-slate-400 max-w-xl leading-relaxed mb-6 italic">
             When I’m offline, I like to go on a run, play tennis, or enjoy the beach and touch sand (found out I'm a bit allergic to some type of grass)
         </p>
 
-        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-6 text-slate-400 text-xl mb-8">
-            <a href="mailto:shrouq.ghamdi.ds@gmail.com" title="Email Direct" class="hover:text-blue-600 transition">
+        <div class="flex flex-wrap items-center justify-center sm:justify-start gap-6 text-slate-400 dark:text-slate-500 text-xl mb-8">
+            <a href="mailto:shrouq.ghamdi.ds@gmail.com" title="Email Direct" class="hover:text-blue-600 dark:hover:text-blue-400 transition">
                 <i class="fas fa-envelope"></i>
             </a>
-            <a href="https://linkedin.com/in/shrouq-alghamdi" target="_blank" title="LinkedIn Profile" class="hover:text-blue-600 transition">
+            <a href="https://linkedin.com/in/shrouq-alghamdi" target="_blank" title="LinkedIn Profile" class="hover:text-blue-600 dark:hover:text-blue-400 transition">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://github.com/shrouqgh" target="_blank" title="GitHub Repositories" class="hover:text-blue-600 transition">
+            <a href="https://github.com/shrouqgh" target="_blank" title="GitHub Repositories" class="hover:text-blue-600 dark:hover:text-blue-400 transition">
                 <i class="fab fa-github"></i>
             </a>
-            <span class="text-xs bg-slate-100 text-slate-500 font-semibold px-2.5 py-1 rounded-full border border-slate-200 sm:ml-2">
-                <i class="fas fa-map-marker-alt text-blue-600 mr-1"></i> United States/Saudi Arabia
+            <span class="text-xs bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-semibold px-2.5 py-1 rounded-full border border-slate-200 dark:border-slate-700 sm:ml-2">
+                <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400 mr-1"></i> United States/Saudi Arabia
             </span>
         </div>
 
@@ -66,204 +76,182 @@
     </section>
     
     <section id="skills" class="max-w-4xl mx-auto px-6 pb-16">
-        <div class="border-t border-slate-100 pt-10">
-            <h2 class="text-xs font-bold text-blue-600 uppercase tracking-widest mb-10 text-center sm:text-left">Core Competencies</h2>
+        <div class="border-t border-slate-100 dark:border-slate-800 pt-10">
+            <h2 class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-10 text-center sm:text-left">Core Competencies</h2>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 text-sm">
                 
                 <div class="text-center sm:text-left">
                     <div class="mb-4 flex justify-center sm:justify-start">
-                        <div class="h-10 w-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-lg border border-blue-100 shadow-sm">
+                        <div class="h-10 w-10 bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 rounded-lg flex items-center justify-center text-lg border border-blue-100 dark:border-slate-700 shadow-sm">
                             <i class="fas fa-brain"></i>
                         </div>
                     </div>
-                    <h3 class="font-bold text-slate-900 mb-2 text-base">Machine Learning & NLP</h3>
-                    <p class="text-slate-500 leading-relaxed">Clustering systems, natural language processing (BERT variants), fraud detection, recommender engines, and algorithmic entity resolution systems.</p>
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2 text-base">Machine Learning & NLP</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Clustering systems, natural language processing (BERT variants), fraud detection, recommender engines, and algorithmic entity resolution systems.</p>
                 </div>
 
                 <div class="text-center sm:text-left">
                     <div class="mb-4 flex justify-center sm:justify-start">
-                        <div class="h-10 w-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-lg border border-blue-100 shadow-sm">
+                        <div class="h-10 w-10 bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 rounded-lg flex items-center justify-center text-lg border border-blue-100 dark:border-slate-700 shadow-sm">
                             <i class="fas fa-flask"></i>
                         </div>
                     </div>
-                    <h3 class="font-bold text-slate-900 mb-2 text-base">Experimentation & Strategy</h3>
-                    <p class="text-slate-500 leading-relaxed">Statistical hypothesis testing (A/B testing, multi-armed bandits), sample size determination, experimentation design, promotional yield optimization, and KPI design frameworks.</p>
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2 text-base">Experimentation & Strategy</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Statistical hypothesis testing (A/B testing, multi-armed bandits), sample size determination, experimentation design, promotional yield optimization, and KPI design frameworks.</p>
                 </div>
 
                 <div class="text-center sm:text-left">
                     <div class="mb-4 flex justify-center sm:justify-start">
-                        <div class="h-10 w-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center text-lg border border-blue-100 shadow-sm">
+                        <div class="h-10 w-10 bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 rounded-lg flex items-center justify-center text-lg border border-blue-100 dark:border-slate-700 shadow-sm">
                             <i class="fas fa-server"></i>
                         </div>
                     </div>
-                    <h3 class="font-bold text-slate-900 mb-2 text-base">Data Infrastructure</h3>
-                    <p class="text-slate-500 leading-relaxed">Python (Scikit-Learn, Pandas), advanced SQL (BigQuery, PostgreSQL), ETL pipeline automation scripts, and Git lifecycle version management.</p>
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-2 text-base">Data Infrastructure</h3>
+                    <p class="text-slate-500 dark:text-slate-400 leading-relaxed">Python (Scikit-Learn, Pandas), advanced SQL (BigQuery, PostgreSQL), ETL pipeline automation scripts, and Git lifecycle version management.</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section class="bg-slate-50 border-y border-slate-200 py-12">
+    <section class="bg-slate-50 dark:bg-slate-800/50 border-y border-slate-200 dark:border-slate-800 py-12 transition-colors duration-300">
         <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
             <div>
-                <p class="text-4xl font-extrabold text-blue-700 mb-2">9M+</p>
-                <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Core Entity Profiles Modeled</p>
+                <p class="text-4xl font-extrabold text-blue-700 dark:text-blue-400 mb-2">9M+</p>
+                <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">Core Entity Profiles Modeled</p>
             </div>
             <div>
-                <p class="text-4xl font-extrabold text-blue-700 mb-2">$5.5M+</p>
-                <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Optimized Business Impact</p>
+                <p class="text-4xl font-extrabold text-blue-700 dark:text-blue-400 mb-2">$5.5M+</p>
+                <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">Optimized Business Impact</p>
             </div>
             <div>
-                <p class="text-4xl font-extrabold text-blue-700 mb-2">98%</p>
-                <p class="text-xs uppercase tracking-wider text-slate-500 font-semibold">Pipeline Verification Accuracy</p>
+                <p class="text-4xl font-extrabold text-blue-700 dark:text-blue-400 mb-2">98%</p>
+                <p class="text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">Pipeline Verification Accuracy</p>
             </div>
         </div>
     </section>
                         
     <section id="portfolio" class="max-w-6xl mx-auto px-6 py-20">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-12 gap-4">
-            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">Featured Technical Implementations</h2>
-            <span class="text-xs font-semibold px-3 py-1 bg-blue-50 text-blue-700 rounded-full border border-blue-100 self-start sm:self-auto">
+            <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Featured Technical Implementations</h2>
+            <span class="text-xs font-semibold px-3 py-1 bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-400 rounded-full border border-blue-100 dark:border-slate-700 self-start sm:self-auto">
                 NDA-Compliant, Professional & Personal Projects
             </span>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white rounded-xl border border-slate-200 p-8 hover:border-blue-300 hover:shadow-md transition flex flex-col justify-between">
+            <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">
+                    <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
                         <i class="fas fa-layer-group"></i> <span>Advanced Data Segmentation</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Behavioral Clustering & Optimization Modeling</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Behavioral Clustering & Optimization Modeling</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Processed large-scale data logs to extract structural trajectory trends. Engineered an algorithmic profiling system that isolated a stark 76% operational drop-off vector within critical entity subsets. Developed predictive valuation models establishing an addressable $5.5M scaling opportunity.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Python</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">RFM Clustering</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">SQL / BigQuery</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Predictive Modeling</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Python</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">RFM Clustering</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">SQL / BigQuery</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Predictive Modeling</span>
                     </div>
                 </div>
-                <a href="https://github.com/shrouqgh/customer-lifecycle-segmentation" target="_blank" class="text-sm font-bold text-blue-600 hover:text-blue-700 transition flex items-center gap-1">
+                <a href="https://github.com/shrouqgh/customer-lifecycle-segmentation" target="_blank" class="text-sm font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition flex items-center gap-1">
                     Examine Pipeline Source &rarr;
                 </a>
             </div>
 
-            <div class="bg-white rounded-xl border border-slate-200 p-8 hover:border-blue-300 hover:shadow-md transition flex flex-col justify-between">
+            <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">
+                    <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
                         <i class="fas fa-chart-line"></i> <span>Attribution & Pattern Discovery</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Performance Analytics & Association Rule Engineering</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Performance Analytics & Association Rule Engineering</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Built a programmatic post-mortem framework to evaluate system execution layers and conversion funnels. Evaluated cross-department relational behaviors via association rule generation (Apriori layout), verifying a solid 11.4% to 32% return performance cadence alongside an explicit 26% system feature attachment rate.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Python</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Market Basket Analysis</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Attribution Modeling</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Python</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Market Basket Analysis</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Attribution Modeling</span>
                     </div>
                 </div>
-                <a href="https://github.com/shrouqgh/campaign-lifecycle-analytics" target="_blank" class="text-sm font-bold text-blue-600 hover:text-blue-700 transition flex items-center gap-1">
+                <a href="https://github.com/shrouqgh/campaign-lifecycle-analytics" target="_blank" class="text-sm font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition flex items-center gap-1">
                     Examine Pipeline Source &rarr;
                 </a>
             </div>
 
-            <div class="bg-white rounded-xl border border-slate-200 p-8 hover:border-blue-300 hover:shadow-md transition flex flex-col justify-between">
+            <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">
+                    <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
                         <i class="fas fa-network-wired"></i> <span>Data Pipeline Engineering</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">YouTube Safety Index: Traffic Interception & Ingestion Pipeline</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">YouTube Safety Index: Traffic Interception & Ingestion Pipeline</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Architected a real-time monitoring infrastructure to capture network traffic for automated safety moderation. Configured an SSL-decrypted proxy server environment to parse streaming data with an average 250ms latency baseline, engineered Python extraction algorithms to isolate distinct content IDs, and built an automated ingestion loop into Elasticsearch. Powered downstream BERT inference pipelines optimized for threat detection, identifying unsafe material with a specialized 0.88 F1-score and an 83% overall verification accuracy.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Elasticsearch</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Python (ETL)</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Proxy Interception</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">YouTube API</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">BERT Optimization</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Elasticsearch</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Python (ETL)</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Proxy Interception</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">YouTube API</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">BERT Optimization</span>
                     </div>
                 </div>
-                <a href="https://github.com/Shrouqgh/youtube-safety-index-pipeline" target="_blank" class="text-sm font-bold text-blue-600 hover:text-blue-700 transition flex items-center gap-1">
+                <a href="https://github.com/Shrouqgh/youtube-safety-index-pipeline" target="_blank" class="text-sm font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition flex items-center gap-1">
                     Examine Pipeline Source &rarr;
                 </a>
             </div>
 
-            <div class="bg-white rounded-xl border border-slate-200 p-8 hover:border-blue-300 hover:shadow-md transition flex flex-col justify-between">
+            <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between">
                 <div>
-                    <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">
+                    <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
                         <i class="fas fa-database"></i> <span>Data Identity & Automation</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Scalable Entity Resolution & Deduplication Pipeline</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Scalable Entity Resolution & Deduplication Pipeline</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Designed an automated entity linkage architecture to resolve disparate records across high-volume relational tables. Implemented custom blocking schemas and string distance metrics to cleanly structure identity clusters, minimizing computational complexity while scaling verification loops.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Python</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Entity Resolution</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Record Linkage</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">PostgreSQL</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Python</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Entity Resolution</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Record Linkage</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">PostgreSQL</span>
                     </div>
                 </div>
-                <a href="https://github.com/Shrouqgh/pitt-ucis-projects" target="_blank" class="text-sm font-bold text-blue-600 hover:text-blue-700 transition flex items-center gap-1">
-                    Examine Repository Source &rarr;
-                </a>
-            </div>
-
-            <div class="bg-white rounded-xl border border-slate-200 p-8 hover:border-blue-300 hover:shadow-md transition flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 uppercase tracking-wider mb-3">
-                        <i class="fas fa-vial"></i> <span>Statistical Experimentation</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Multi-Channel A/B Testing & Evaluation Frameworks</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Architected an end-to-end experiment layout to validate system changes and workflow performance adjustments. Calculated strict statistical power and sample size minimums, analyzed distribution metrics, and minimized error vectors to verify exact conversion lifts across targeted subsets.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Hypothesis Testing</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">A/B Testing</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Statistical Inference</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 text-slate-600 rounded">Python</span>
-                    </div>
-                </div>
-                <a href="https://github.com/shrouqgh/ab_test_framework" target="_blank" class="text-sm font-bold text-blue-600 hover:text-blue-700 transition flex items-center gap-1">
+                <a href="https://github.com/Shrouqgh/pitt-ucis-projects" target="_blank" class="text-sm font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition flex items-center gap-1">
                     Examine Repository Source &rarr;
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="border-t border-slate-200 py-20 bg-slate-50">
+    <section id="contact" class="border-t border-slate-200 dark:border-slate-800 py-20 bg-slate-50 dark:bg-slate-800/30 transition-colors duration-300">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-slate-900 mb-3">Send Me A Message</h2>
-                <!-- <p class="text-sm text-slate-600 max-w-md mx-auto">Have a project in mind or want to discuss a data strategy? Drop a message below and I'll get back to you directly.</p> -->
+                <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-3">Send Me A Message</h2>
             </div>
 
             <form action="https://formspree.io/f/xpqnpkew" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Your Name</label>
-                        <input type="text" name="name" required class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-blue-600 transition">
+                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Your Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-800 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
-                        <input type="email" name="email" required class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-blue-600 transition">
+                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Email Address</label>
+                        <input type="email" name="email" required class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-800 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Subject</label>
-                        <input type="text" name="subject" required class="w-full px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-blue-600 transition">
+                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Subject</label>
+                        <input type="text" name="subject" required class="w-full px-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-800 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition">
                     </div>
                 </div>
 
                 <div class="flex flex-col justify-between">
                     <div class="mb-4 md:mb-0 flex-1 flex flex-col">
-                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">Your Message</label>
-                        <textarea name="message" required class="w-full flex-1 px-4 py-3 bg-white border border-slate-200 rounded-lg text-sm text-slate-800 focus:outline-none focus:border-blue-600 transition resize-none min-h-[150px] md:min-h-0"></textarea>
+                        <label class="block text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Your Message</label>
+                        <textarea name="message" required class="w-full flex-1 px-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-800 dark:text-white focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 transition resize-none min-h-[150px] md:min-h-0"></textarea>
                     </div>
                     <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm rounded-lg transition shadow-md shadow-blue-600/10">
                         Send Message
@@ -273,49 +261,45 @@
         </div>
     </section>
     
-    <footer class="border-t border-slate-200 py-12 bg-slate-50">
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-12 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-xl font-bold text-slate-900 mb-4">Let's Collaborate on Data Strategy</h2>
-            <p class="text-sm text-slate-600 mb-8 max-w-md mx-auto">Available for technical architecture consulting, end-to-end predictive engineering pipelines, and advanced analytics.</p>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Let's Collaborate on Data Strategy</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-8 max-w-md mx-auto">Available for technical architecture consulting, end-to-end predictive engineering pipelines, and advanced analytics.</p>
             <div class="flex justify-center space-x-6 text-slate-400 text-sm mb-6">
-                <a href="mailto:shrouq.ghamdi.ds@gmail.com" class="hover:text-blue-600 transition"><i class="fas fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/shrouq-alghamdi" target="_blank" class="hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/shrouqgh" target="_blank" class="hover:text-blue-600 transition"><i class="fab fa-github"></i></a>
+                <a href="mailto:shrouq.ghamdi.ds@gmail.com" class="hover:text-blue-600 dark:hover:text-blue-400 transition"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/shrouq-alghamdi" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/shrouqgh" target="_blank" class="hover:text-blue-600 dark:hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
             </div>
-           <!-- <p class="text-xs text-slate-400">&copy; 2026 Shrouq Alghamdi. Anonymized Strategy Portfolio. Executed within strict data confidentiality and verification protocols.</p> -->
         </div>
     </footer>
 
-    <script data-goatcounter="https://shrouqgh.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
+    <script data-goatcounter="https://shrouqgh.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-    
-    
-    
-    document.addEventListener('DOMContentLoaded', () => {
-      const themeToggleBtn = document.getElementById('global-theme-toggle');
-      if (!themeToggleBtn) return;
-    
-      // Sync button label with the current active attribute
-      const updateButtonUI = (theme) => {
-        themeToggleBtn.innerHTML = theme === 'dark' ? '☀️ <span class="btn-text">Light Mode</span>' : '🌙 <span class="btn-text">Dark Mode</span>';
-        themeToggleBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
-      };
-    
-      // Get current runtime theme state
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      updateButtonUI(currentTheme);
-    
-      // Handle click sequence
-      themeToggleBtn.addEventListener('click', () => {
-        const activeTheme = document.documentElement.getAttribute('data-theme');
-        const targetTheme = activeTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', targetTheme);
-        localStorage.setItem('global-portfolio-theme', targetTheme);
-        updateButtonUI(targetTheme);
-      });
-    });
-    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleBtn = document.getElementById('global-theme-toggle');
+            if (!themeToggleBtn) return;
+            
+            // Sync button label with the current active attribute
+            const updateButtonUI = (theme) => {
+                themeToggleBtn.innerHTML = theme === 'dark' ? '☀️ <span class="btn-text">Light Mode</span>' : '🌙 <span class="btn-text">Dark Mode</span>';
+                themeToggleBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+            };
+            
+            // Get current runtime theme state
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            updateButtonUI(currentTheme);
+            
+            // Handle click sequence
+            themeToggleBtn.addEventListener('click', () => {
+                const activeTheme = document.documentElement.getAttribute('data-theme');
+                const targetTheme = activeTheme === 'dark' ? 'light' : 'dark';
+                
+                document.documentElement.setAttribute('data-theme', targetTheme);
+                localStorage.setItem('global-portfolio-theme', targetTheme);
+                updateButtonUI(targetTheme);
+            });
+        });
+    </script>
 </body>
 </html>
