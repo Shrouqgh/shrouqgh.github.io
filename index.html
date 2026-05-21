@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+  // 1. Immediately invoked function to prevent theme flashing
+      (function () {
+        const savedTheme = localStorage.getItem('global-portfolio-theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+        const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    
+        document.documentElement.setAttribute('data-theme', initialTheme);
+      })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shrouq Alghamdi | Senior Data Scientist & Strategy Consultant</title>
@@ -277,5 +288,34 @@
 
     <script data-goatcounter="https://shrouqgh.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
+
+    
+    
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggleBtn = document.getElementById('global-theme-toggle');
+      if (!themeToggleBtn) return;
+    
+      // Sync button label with the current active attribute
+      const updateButtonUI = (theme) => {
+        themeToggleBtn.innerHTML = theme === 'dark' ? '☀️ <span class="btn-text">Light Mode</span>' : '🌙 <span class="btn-text">Dark Mode</span>';
+        themeToggleBtn.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+      };
+    
+      // Get current runtime theme state
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      updateButtonUI(currentTheme);
+    
+      // Handle click sequence
+      themeToggleBtn.addEventListener('click', () => {
+        const activeTheme = document.documentElement.getAttribute('data-theme');
+        const targetTheme = activeTheme === 'dark' ? 'light' : 'dark';
+        
+        document.documentElement.setAttribute('data-theme', targetTheme);
+        localStorage.setItem('global-portfolio-theme', targetTheme);
+        updateButtonUI(targetTheme);
+      });
+    });
+    
 </body>
 </html>
