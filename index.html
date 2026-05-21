@@ -273,6 +273,56 @@
                 </a>
             </div>
         </div>
+
+
+
+
+        <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between group">
+        <div>
+        <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
+            <i class="fas fa-shopping-basket"></i> <span>Personalization Architecture</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">High-Dimensional Purchase Propensity & Cross-Sell Engine</h3>
+        
+        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+            Designed a personalization framework utilizing deep collaborative filtering algorithms to score user purchase affinity. Built a processing matrix that evaluates historical basket profiles and dynamic clickstream patterns to serve real-time recommendations during customer checkout sessions.
+        </p>
+
+        <div class="space-y-4 my-6">
+            <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1.5">Figure 7: Real-Time Propensity Scoring JSON Payload</span>
+                <div class="bg-slate-950 rounded-lg p-4 font-mono text-[11px] text-blue-300 shadow-inner border border-slate-900 dark:border-slate-700/40 overflow-x-auto">
+                    <span class="text-slate-600 block mb-1">// Outbound Rec-Engine Inference API Endpoint</span>
+                    <span class="text-yellow-500">"inference_response"</span>: {
+                        <span class="text-purple-400">"customer_id"</span>: <span class="text-emerald-400">"PANDA_9081273"</span>,
+                        <span class="text-purple-400">"latent_affinity_cluster"</span>: <span class="text-emerald-400">0.84</span>,
+                        <span class="text-purple-400">"top_recommendations"</span>: [
+                            { <span class="text-purple-400">"sku"</span>: <span class="text-emerald-400">"SKU_4401"</span>, <span class="text-purple-400">"propensity_score"</span>: <span class="text-emerald-400">0.942</span> },
+                            { <span class="text-purple-400">"sku"</span>: <span class="text-emerald-400">"SKU_1299"</span>, <span class="text-purple-400">"propensity_score"</span>: <span class="text-emerald-400">0.871</span> }
+                        ]
+                    }
+                </div>
+            </div>
+        </div>
+
+        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+            Integrated the model into regional customer-facing frameworks, driving a measurable lift in average basket sizes and improving the conversion metrics of targeted digital outreach campaigns.
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Collaborative Filtering</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Propensity Scoring</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Large-Scale Analytics</span>
+        </div>
+    </div>
+    <span class="text-sm font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1 cursor-not-allowed">
+        Corporate Infrastructure Source (Private) <i class="fas fa-lock text-xs"></i>
+    </span>
+    </div>
+
+
+
+        
     </section>
 
     <section id="contact" class="border-t border-slate-200 dark:border-slate-800 py-20 bg-slate-50 dark:bg-slate-800/30 transition-colors duration-300">
