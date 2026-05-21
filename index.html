@@ -180,57 +180,36 @@
                 </a>
             </div>
 
-            <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between group">
+            <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between md:col-span-2">
                 <div>
                     <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
                         <i class="fas fa-network-wired"></i> <span>Data Pipeline & API Engineering</span>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">YouTube Safety Index: Traffic Interception & Ingestion Pipeline</h3>
                     
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Architected a real-time monitoring infrastructure to capture network traffic for automated safety moderation. Configured an SSL-decrypted proxy server environment to parse streaming data with an average 250ms latency baseline, engineered Python extraction algorithms to isolate distinct content IDs, and built an automated ingestion loop into Elasticsearch. Developed high-throughput REST API endpoints to securely expose real-time threat indices and pipeline diagnostic telemetry.
                     </p>
 
-                    <div class="space-y-4 my-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
                         <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1.5">Figure 1: Live Gateway Traffic Decryption Stream</span>
-                            <div class="bg-slate-900 rounded-lg p-4 font-mono text-[11px] text-emerald-400 shadow-inner border border-slate-800 dark:border-slate-700/60 overflow-x-auto">
-                                <div class="flex space-x-2 mb-2 border-b border-slate-800 pb-2">
-                                    <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
-                                    <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></div>
-                                    <div class="w-2.5 h-2.5 rounded-full bg-green-500/80"></div>
-                                    <span class="text-slate-500 text-[10px] ml-2">shrouq@gateway-node:~# tail -f /var/log/squid/access.log</span>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 1: Live Gateway Traffic Interception & Decryption Stream</span>
+                            <div class="relative bg-slate-100 dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 aspect-video group">
+                                <img src="images/youtube-pipeline-stream.png" alt="Gateway Decryption Stream" class="w-full h-full object-cover opacity-90 group-hover:scale-[1.02] transition duration-300">
+                                <div class="absolute inset-0 flex items-center justify-center bg-slate-950/40 opacity-0 group-hover:opacity-100 transition duration-200">
+                                    <span class="text-xs font-semibold text-white bg-slate-900/80 px-3 py-1.5 rounded border border-slate-700"><i class="fas fa-search-plus mr-1"></i> View Workspace Screenshot</span>
                                 </div>
-                                <p class="text-slate-500">[2026-05-21 07:42:11] INITIALIZING TLS/SSL BUMPING ENGINE...</p>
-                                <p class="text-slate-500">[2026-05-21 07:42:13] TRUST CHAIN VERIFIED: CUSTOM CA INJECTED SUCCESSFULLY</p>
-                                <p class="text-blue-400 font-semibold">CONNECT 172.20.10.3:443 HTTP/1.1 - Intercepted Client Handshake</p>
-                                <p class="text-emerald-400">&gt; GET https://www.youtube.com/youtubei/v1/watch?video_id=EXAMPLE_ID_101 <span class="text-slate-500">[200 OK - 248ms]</span></p>
-                                <p class="text-slate-500">[2026-05-21 07:42:15] STREAM BUFFER COUPLING PAYLOAD TO PARSER MODULE...</p>
                             </div>
                         </div>
 
                         <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1.5">Figure 2: Ingestion Cluster Schema Definition</span>
-                            <div class="bg-slate-950 rounded-lg p-4 font-mono text-[11px] text-blue-300 shadow-inner border border-slate-900 dark:border-slate-700/40 overflow-x-auto">
-                                <span class="text-slate-600 block mb-1">// Mapping: youtube_proxy_logs_v1</span>
-                                <span class="text-yellow-500">"mappings"</span>: {
-                                    <span class="text-yellow-500">"properties"</span>: {
-                                        <span class="text-purple-400">"@timestamp"</span>: { <span class="text-yellow-500">"type"</span>: <span class="text-emerald-400">"date"</span> },
-                                        <span class="text-purple-400">"client_ip"</span>: { <span class="text-yellow-500">"type"</span>: <span class="text-emerald-400">"ip"</span> },
-                                        <span class="text-purple-400">"extracted_video_id"</span>: { <span class="text-yellow-500">"type"</span>: <span class="text-emerald-400">"keyword"</span> }
-                                    }
-                                }
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 2: Model Performance Metrics & Validation Curves</span>
+                            <div class="relative bg-slate-100 dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 aspect-video group">
+                                <img src="images/youtube-validation-metrics.png" alt="Scikit-Learn Validation Diagnostics" class="w-full h-full object-cover opacity-90 group-hover:scale-[1.02] transition duration-300">
+                                <div class="absolute inset-0 flex items-center justify-center bg-slate-950/40 opacity-0 group-hover:opacity-100 transition duration-200">
+                                    <span class="text-xs font-semibold text-white bg-slate-900/80 px-3 py-1.5 rounded border border-slate-700"><i class="fas fa-search-plus mr-1"></i> View Diagnostics Plot</span>
+                                </div>
                             </div>
-                        </div>
-
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1.5">Figure 3: Scikit-Learn Validation Diagnostics</span>
-                            <div class="bg-slate-900 text-slate-300 rounded-lg p-4 font-mono text-[10px] sm:text-[11px] shadow-inner border border-slate-800 dark:border-slate-700/60 overflow-x-auto whitespace-pre"><div class="text-slate-500 border-b border-slate-800 pb-1.5 mb-1.5">--- Model Performance Evaluation Report ---</div>               precision    recall  f1-score   support
-
-  Safe Content       0.85      0.82      0.83       450
-Unsafe Content       0.81      0.96      0.88       180
-
-      accuracy                           0.83       630<div class="text-emerald-500/90 font-semibold border-t border-slate-800 pt-1.5 mt-1.5">Target Metrics Verified // Validation F1-Score Stable at 0.88</div></div>
                         </div>
                     </div>
                 
@@ -256,26 +235,9 @@ Unsafe Content       0.81      0.96      0.88       180
                         <i class="fas fa-database"></i> <span>Data Identity & Automation</span>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Scalable Entity Resolution & Deduplication Pipeline</h3>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Designed an automated entity linkage architecture to resolve disparate records across high-volume relational tables. Implemented custom blocking schemas and string distance metrics to cleanly structure identity clusters, minimizing computational complexity while scaling verification loops.
                     </p>
-
-                    <div class="space-y-4 my-6">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1.5">Figure 4: Algorithmic Resolution & Matching Weights Matrix</span>
-                            <div class="bg-slate-900 text-slate-300 rounded-lg p-4 font-mono text-[11px] shadow-inner border border-slate-800 dark:border-slate-700/60 overflow-x-auto whitespace-pre"><div class="text-slate-500 border-b border-slate-800 pb-1.5 mb-1.5">--- Token Similarity Vector Evaluation ---</div>  Feature Weights: [Name: 0.45, Email: 0.35, Phone: 0.20]
-  Levenshtein Distance Threshold: &gt;= 0.88
-  Jaro-Winkler Jaccard Score: Optimized at 0.91
-
-  [Record A]: "Shrouq Al-Ghamdi"  &lt;-- Match Confidence: 96.4% --&gt;  [Record B]: "Shrouq Alghamdi"
-  [Status]: MERGING ENTITY FIELDS... SUCCESS<div class="text-emerald-500/90 font-semibold border-t border-slate-800 pt-1.5 mt-1.5">Pipeline State: Idle // 140K+ Stale Duplicates Resolved Globally</div></div>
-                        </div>
-                    </div>
-
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Successfully consolidated sprawling identity logs down to crisp single-source truth structures, saving computational downstream overhead and boosting transactional record cleanlines.
-                    </p>
-
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Python</span>
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Entity Resolution</span>
@@ -294,28 +256,9 @@ Unsafe Content       0.81      0.96      0.88       180
                         <i class="fas fa-boxes"></i> <span>Predictive Supply Chain</span>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Predictive Demand Forecasting & Inventory Optimization Engine</h3>
-                    
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Engineered an end-to-end forecasting pipeline to predict daily product demand across regional retail distribution hubs. Implemented gradient-boosted decision trees and structural time-series models to handle extreme seasonal demand spikes, integrating historical transaction logs with live promotional telemetry.
                     </p>
-
-                    <div class="space-y-4 my-6">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1.5">Figure 5: Model Validation Residuals & Forecast Skew</span>
-                            <div class="bg-slate-900 text-slate-300 rounded-lg p-4 font-mono text-[11px] shadow-inner border border-slate-800 dark:border-slate-700/60 overflow-x-auto whitespace-pre"><div class="text-slate-500 border-b border-slate-800 pb-1.5 mb-1.5">--- Time-Series Model Validation Metrics ---</div>  Algorithm Evaluation: LightGBM regressor + Custom Lag Features
-  Evaluation Horizon: 14-Day Rolling Target Out-of-Sample
-  Baseline Metric: WAPE (Weighted Absolute Percentage Error)
-
-  [Target SKU Category]: Fresh Produce & Perishables
-  [Baseline WAPE]: 18.4%  -- Optimized via Hyperparameter Tuning --&gt;  [Model WAPE]: 11.2%
-  [Result]: 14.5% Reduction in Supply Chain Stockout Anomalies</div>
-                        </div>
-                    </div>
-
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Successfully scaled the feature engineering pipeline to handle millions of rows of daily sales data, radically minimizing inventory overhead costs while stabilizing product availability targets.
-                    </p>
-
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Time-Series Modeling</span>
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">LightGBM / XGBoost</span>
@@ -333,32 +276,9 @@ Unsafe Content       0.81      0.96      0.88       180
                         <i class="fas fa-shopping-basket"></i> <span>Personalization Architecture</span>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">High-Dimensional Purchase Propensity & Cross-Sell Engine</h3>
-                    
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Designed a personalization framework utilizing deep collaborative filtering algorithms to score user purchase affinity. Built a processing matrix that evaluates historical basket profiles and dynamic clickstream patterns to serve real-time recommendations during customer checkout sessions.
                     </p>
-
-                    <div class="space-y-4 my-6">
-                        <div>
-                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-1.5">Figure 6: Real-Time Propensity Scoring JSON Payload</span>
-                            <div class="bg-slate-950 rounded-lg p-4 font-mono text-[11px] text-blue-300 shadow-inner border border-slate-900 dark:border-slate-700/40 overflow-x-auto">
-                                <span class="text-slate-600 block mb-1">// Outbound Rec-Engine Inference API Endpoint</span>
-                                <span class="text-yellow-500">"inference_response"</span>: {
-                                    "customer_id": <span class="text-emerald-400">"PANDA_9081273"</span>,
-                                    "latent_affinity_cluster": <span class="text-emerald-400">0.84</span>,
-                                    "top_recommendations": [
-                                        { "sku": <span class="text-emerald-400">"SKU_4401"</span>, "propensity_score": <span class="text-emerald-400">0.942</span> },
-                                        { "sku": <span class="text-emerald-400">"SKU_1299"</span>, "propensity_score": <span class="text-emerald-400">0.871</span> }
-                                    ]
-                                }
-                            </div>
-                        </div>
-                    </div>
-
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Integrated the model into regional customer-facing frameworks, driving a measurable lift in average basket sizes and improving the conversion metrics of targeted digital outreach campaigns.
-                    </p>
-
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Python</span>
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">SQL / Warehouse</span>
