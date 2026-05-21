@@ -1,0 +1,68 @@
+/* ==========================================
+   GLOBAL LIGHT THEME SYSTEM (DEFAULT)
+   ========================================== */
+:root {
+  --bg-main: #ffffff;
+  --bg-surface: #f8fafc;        /* Cards, Sidebars, Code blocks background */
+  --bg-nav: rgba(255, 255, 255, 0.8);
+  
+  --text-primary: #0f172a;      /* Headings, Main text */
+  --text-secondary: #475569;    /* Subtitles, Captions, Meta-tags */
+  --text-muted: #94a3b8;
+  
+  --accent-primary: #2563eb;    /* Interactive elements, Links, Buttons */
+  --accent-hover: #1d4ed8;
+  --border-color: #e2e8f0;      /* Dividers, Card borders */
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* ==========================================
+   GLOBAL DARK THEME OVERRIDES
+   ========================================== */
+[data-theme="dark"] {
+  --bg-main: #0f172a;           /* Deep Slate Blue */
+  --bg-surface: #1e293b;        /* Lighter Slate for surface depth */
+  --bg-nav: rgba(15, 23, 42, 0.8);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  
+  --accent-primary: #38bdf8;    /* Vibrant Sky Blue for high contrast */
+  --accent-hover: #7dd3fc;
+  --border-color: #334155;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+}
+
+/* ==========================================
+   CORE LAYOUT BINDINGS
+   ========================================== */
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+header, nav {
+  background-color: var(--bg-nav);
+  backdrop-filter: blur(8px);   /* Modern glassmorphism look */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.project-card, .case-study-container {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+a, .link-highlight {
+  color: var(--accent-primary);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
