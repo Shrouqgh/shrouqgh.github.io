@@ -2,10 +2,9 @@
 <html lang="en" data-theme="light">
 <head>
     <script>
-        // 1. Immediately invoked function to prevent theme flashing
         (function () {
             const savedTheme = localStorage.getItem('global-portfolio-theme');
-            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: light)').matches;
             const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
             document.documentElement.setAttribute('data-theme', initialTheme);
         })();
@@ -15,7 +14,6 @@
     <title>Shrouq Alghamdi | Senior Data Scientist & Strategy Consultant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Configure Tailwind to support custom data-theme attributes seamlessly
         tailwind.config = {
             darkMode: ['selector', '[data-theme="dark"]'],
             theme: {
