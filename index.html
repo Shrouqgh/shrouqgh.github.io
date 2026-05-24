@@ -196,9 +196,6 @@
                             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 1: Live Gateway Traffic Interception & Decryption Stream</span>
                             <div class="relative bg-slate-100 dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 aspect-video group">
                                 <img src="images/youtube-pipeline-stream.png" alt="Gateway Decryption Stream" class="w-full h-full object-cover opacity-90 group-hover:scale-[1.02] transition duration-300">
-                                <div class="absolute inset-0 flex items-center justify-center bg-slate-950/40 opacity-0 group-hover:opacity-100 transition duration-200">
-                                    <!--<span class="text-xs font-semibold text-white bg-slate-900/80 px-3 py-1.5 rounded border border-slate-700"><i class="fas fa-search-plus mr-1"></i> View Workspace Screenshot</span>-->
-                                </div>
                             </div>
                         </div>
 
@@ -206,9 +203,6 @@
                             <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 2: Model Performance Metrics & Validation Curves</span>
                             <div class="relative bg-slate-100 dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 aspect-video group">
                                 <img src="images/youtube-validation-metrics_2.png" alt="Scikit-Learn Validation Diagnostics" class="w-full h-full object-cover opacity-90 group-hover:scale-[1.02] transition duration-300">
-                                <div class="absolute inset-0 flex items-center justify-center bg-slate-950/40 opacity-0 group-hover:opacity-100 transition duration-200">
-                                    <!--<span class="text-xs font-semibold text-white bg-slate-900/80 px-3 py-1.5 rounded border border-slate-700"><i class="fas fa-search-plus mr-1"></i> View Diagnostics Plot</span>-->
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -229,93 +223,75 @@
                 </a>
             </div>
 
-            <!-- ── RETAIL OPERATIONS ANALYTICS DASHBOARD ── -->
-<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between md:col-span-2">
-    <div>
-        <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
-            <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
-                <i class="fas fa-chart-pie"></i> <span>Retail Intelligence & KPI Architecture</span>
-            </div>
-            <span class="text-[11px] font-semibold px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 rounded-full border border-slate-200 dark:border-slate-600 flex items-center gap-1">
-                <i class="fas fa-lock text-[10px]"></i> NDA — data &amp; client anonymized
-            </span>
-        </div>
+            <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between md:col-span-2">
+                <div>
+                    <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
+                        <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                            <i class="fas fa-chart-pie"></i> <span>Retail Intelligence & KPI Architecture</span>
+                        </div>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 rounded-full border border-slate-200 dark:border-slate-600 flex items-center gap-1">
+                            <i class="fas fa-lock text-[10px]"></i> NDA — data &amp; client anonymized
+                        </span>
+                    </div>
 
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Retail Operations Analytics Dashboard — Executive KPI Layer</h3>
-        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-            Designed and implemented an executive-facing analytics layer consolidating order lifecycle metrics, regional performance, fulfilment status, and category-level sales for a large-scale omnichannel grocery retailer operating across 14 branches. Modeled raw transactional data into reusable KPI tables in SQL, wired ETL pipelines into AWS QuickSight, and authored calculated fields to surface AOV, cancellation rate, and delivery fulfilment ratios. Dashboard was consumed daily by ops and commercial leadership.
-        </p>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Retail Operations Analytics Dashboard — Executive KPI Layer</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                        Designed and implemented an executive-facing analytics layer consolidating order lifecycle metrics, regional performance, fulfilment status, and category-level sales for a large-scale omnichannel grocery retailer operating across 14 branches. Modeled raw transactional data into reusable KPI tables in SQL, wired ETL pipelines into AWS QuickSight, and authored calculated fields to surface AOV, cancellation rate, and delivery fulfilment ratios. Dashboard was consumed daily by ops and commercial leadership.
+                    </p>
 
-        <!-- KPI summary strip -->
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
-                <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">156K</p>
-                <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">Orders YTD</p>
-            </div>
-            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
-                <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">25M</p>
-                <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">Sales YTD (SAR)</p>
-            </div>
-            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
-                <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">193</p>
-                <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">AOV YTD (SAR)</p>
-            </div>
-            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
-                <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">85%</p>
-                <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">Delivery Rate</p>
-            </div>
-        </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                        <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
+                            <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">156K</p>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">Orders YTD</p>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
+                            <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">25M</p>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">Sales YTD (SAR)</p>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
+                            <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">193</p>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">AOV YTD (SAR)</p>
+                        </div>
+                        <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
+                            <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">85%</p>
+                            <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">Delivery Rate</p>
+                        </div>
+                    </div>
 
-        <!-- Screenshot + Region chart -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-            <div>
-                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 1: Live QuickSight Dashboard — Orders &amp; Sales Overview</span>
-                <div class="relative bg-slate-100 dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 aspect-video group">
-                    <img src="images/retail-dashboard-overview.png" alt="Anonymized retail operations QuickSight dashboard" class="w-full h-full object-cover opacity-90 group-hover:scale-[1.02] transition duration-300">
-                    <div class="absolute inset-0 flex items-end justify-start p-3 pointer-events-none">
-                        <span class="text-[10px] font-semibold text-white bg-slate-900/70 px-2 py-1 rounded backdrop-blur-sm">Company &amp; date redacted</span>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 1: Live QuickSight Dashboard — Orders &amp; Sales Overview</span>
+                            <div class="relative bg-slate-100 dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 aspect-video group">
+                                <img src="images/retail-dashboard-overview.png" alt="Anonymized retail operations QuickSight dashboard Overview" class="w-full h-full object-cover opacity-90 group-hover:scale-[1.02] transition duration-300">
+                                <div class="absolute inset-0 flex items-end justify-start p-3 pointer-events-none">
+                                    <span class="text-[10px] font-semibold text-white bg-slate-900/70 px-2 py-1 rounded backdrop-blur-sm">Company &amp; date redacted</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 2: Performance metrics and segmentation distribution charts</span>
+                            <div class="relative bg-slate-100 dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 aspect-video group">
+                                <img src="images/retail-dashboard-metrics.png" alt="Anonymized retail regional sales and category analytics breakdown" class="w-full h-full object-cover opacity-90 group-hover:scale-[1.02] transition duration-300">
+                                <div class="absolute inset-0 flex items-end justify-start p-3 pointer-events-none">
+                                    <span class="text-[10px] font-semibold text-white bg-slate-900/70 px-2 py-1 rounded backdrop-blur-sm">Anonymized scale</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">AWS QuickSight</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">SQL / Data Modeling</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">ETL Pipeline</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">KPI Framework Design</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Retail Analytics</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Python</span>
                     </div>
                 </div>
+                <span class="text-sm font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1 cursor-not-allowed">
+                    Corporate Infrastructure Source (Private) <i class="fas fa-lock text-xs"></i>
+                </span>
             </div>
-            <div>
-                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 2: Orders &amp; Sales by Region (YTD, anonymized scale)</span>
-                <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 p-4" style="height:200px; position:relative;">
-                    <canvas id="retailRegionChart" role="img" aria-label="Grouped bar chart showing orders and sales by region: West, Central, East.">Orders by region: West 78K / 12M SAR, Central 58K / 10M SAR, East 20K / 3M SAR.</canvas>
-                </div>
-            </div>
-        </div>
-
-        <!-- Fulfilment donut + Category bar -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
-            <div>
-                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Delivered orders — fulfilment split (YTD)</span>
-                <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 p-4" style="height:180px; position:relative;">
-                    <canvas id="retailFulfilChart" role="img" aria-label="Donut chart: 86% partially delivered, 14% fully delivered out of 136K delivered orders.">86% partially delivered, 14% fully delivered.</canvas>
-                </div>
-            </div>
-            <div>
-                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Order share by category (YTD)</span>
-                <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 p-4" style="height:180px; position:relative;">
-                    <canvas id="retailCatChart" role="img" aria-label="Horizontal bar chart of order share by category. Fresh leads at 15%.">Fresh 15%, Breakfast/Frozen/Beverages/Cooking Essentials/Household each 11%, Food Basics 10%, Snacks 8%, Bakery 7%.</canvas>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex flex-wrap gap-2 mb-6">
-            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">AWS QuickSight</span>
-            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">SQL / Data Modeling</span>
-            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">ETL Pipeline</span>
-            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">KPI Framework Design</span>
-            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Retail Analytics</span>
-            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Python</span>
-        </div>
-    </div>
-    <span class="text-sm font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1 cursor-not-allowed">
-        Corporate Infrastructure Source (Private) <i class="fas fa-lock text-xs"></i>
-    </span>
-</div>
-<!-- ── END RETAIL DASHBOARD ── -->
-
             <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between">
                 <div>
                     <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
@@ -428,97 +404,7 @@
         </div>
     </footer>
 
-    
     <script data-goatcounter="https://shrouqgh.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
-    <!-- Chart.js for Retail Dashboard card -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-    <script>
-        (function () {
-            function initRetailCharts() {
-                const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-                const textColor = isDark ? '#94a3b8' : '#64748b';
-                const gridColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)';
-                const blue1 = '#2563eb';
-                const blue2 = '#93c5fd';
-                const red   = '#ef4444';
-                const green = '#16a34a';
-
-                const regionCtx = document.getElementById('retailRegionChart');
-                if (regionCtx) {
-                    new Chart(regionCtx, {
-                        type: 'bar',
-                        data: {
-                            labels: ['West', 'Central', 'East'],
-                            datasets: [
-                                { label: 'Orders (K)', data: [78, 58, 20], backgroundColor: blue1, borderRadius: 4, yAxisID: 'yOrders' },
-                                { label: 'Sales (M SAR)', data: [12, 10, 3], backgroundColor: blue2, borderRadius: 4, yAxisID: 'ySales' }
-                            ]
-                        },
-                        options: {
-                            responsive: true, maintainAspectRatio: false,
-                            plugins: { legend: { display: true, position: 'top', align: 'end', labels: { color: textColor, font: { size: 11 }, boxWidth: 10, padding: 10 } } },
-                            scales: {
-                                yOrders: { type: 'linear', position: 'left',  ticks: { color: textColor, font: { size: 10 }, callback: v => v + 'K' }, grid: { color: gridColor } },
-                                ySales:  { type: 'linear', position: 'right', ticks: { color: textColor, font: { size: 10 }, callback: v => v + 'M' }, grid: { display: false } },
-                                x: { ticks: { color: textColor, font: { size: 11 } }, grid: { display: false } }
-                            }
-                        }
-                    });
-                }
-
-                const fulfilCtx = document.getElementById('retailFulfilChart');
-                if (fulfilCtx) {
-                    new Chart(fulfilCtx, {
-                        type: 'doughnut',
-                        data: {
-                            labels: ['Partially Delivered', 'Fully Delivered'],
-                            datasets: [{ data: [86, 14], backgroundColor: [red, green], borderWidth: 0, hoverOffset: 4 }]
-                        },
-                        options: {
-                            responsive: true, maintainAspectRatio: false, cutout: '68%',
-                            plugins: { legend: { position: 'bottom', labels: { color: textColor, font: { size: 11 }, boxWidth: 10, padding: 12 } } }
-                        }
-                    });
-                }
-
-                const catCtx = document.getElementById('retailCatChart');
-                if (catCtx) {
-                    new Chart(catCtx, {
-                        type: 'bar',
-                        data: {
-                            labels: ['Fresh', 'Beverages', 'Frozen', 'Breakfast', 'Cooking Ess.', 'Household', 'Food Basics', 'Snacks', 'Bakery'],
-                            datasets: [{ label: 'Share %', data: [15, 11, 11, 11, 11, 11, 10, 8, 7], backgroundColor: blue1, borderRadius: 3 }]
-                        },
-                        options: {
-                            indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-                            plugins: { legend: { display: false } },
-                            scales: {
-                                x: { ticks: { color: textColor, font: { size: 10 }, callback: v => v + '%' }, grid: { color: gridColor } },
-                                y: { ticks: { color: textColor, font: { size: 10 } }, grid: { display: false } }
-                            }
-                        }
-                    });
-                }
-            }
-
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initRetailCharts);
-            } else {
-                initRetailCharts();
-            }
-
-            document.getElementById('global-theme-toggle') && document.getElementById('global-theme-toggle').addEventListener('click', function () {
-                setTimeout(function () {
-                    ['retailRegionChart', 'retailFulfilChart', 'retailCatChart'].forEach(function (id) {
-                        const instance = Chart.getChart(id);
-                        if (instance) instance.destroy();
-                    });
-                    initRetailCharts();
-                }, 50);
-            });
-        })();
-    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
