@@ -229,6 +229,93 @@
                 </a>
             </div>
 
+            <!-- ── RETAIL OPERATIONS ANALYTICS DASHBOARD ── -->
+<div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between md:col-span-2">
+    <div>
+        <div class="flex items-center justify-between flex-wrap gap-3 mb-3">
+            <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+                <i class="fas fa-chart-pie"></i> <span>Retail Intelligence & KPI Architecture</span>
+            </div>
+            <span class="text-[11px] font-semibold px-2.5 py-1 bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 rounded-full border border-slate-200 dark:border-slate-600 flex items-center gap-1">
+                <i class="fas fa-lock text-[10px]"></i> NDA — data &amp; client anonymized
+            </span>
+        </div>
+
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Retail Operations Analytics Dashboard — Executive KPI Layer</h3>
+        <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+            Designed and implemented an executive-facing analytics layer consolidating order lifecycle metrics, regional performance, fulfilment status, and category-level sales for a large-scale omnichannel grocery retailer operating across 14 branches. Modeled raw transactional data into reusable KPI tables in SQL, wired ETL pipelines into AWS QuickSight, and authored calculated fields to surface AOV, cancellation rate, and delivery fulfilment ratios. Dashboard was consumed daily by ops and commercial leadership.
+        </p>
+
+        <!-- KPI summary strip -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
+                <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">156K</p>
+                <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">Orders YTD</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
+                <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">25M</p>
+                <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">Sales YTD (SAR)</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
+                <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">193</p>
+                <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">AOV YTD (SAR)</p>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg p-4 border border-slate-100 dark:border-slate-700 text-center">
+                <p class="text-2xl font-extrabold text-blue-700 dark:text-blue-400">85%</p>
+                <p class="text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold mt-1">Delivery Rate</p>
+            </div>
+        </div>
+
+        <!-- Screenshot + Region chart -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 1: Live QuickSight Dashboard — Orders &amp; Sales Overview</span>
+                <div class="relative bg-slate-100 dark:bg-slate-900 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 aspect-video group">
+                    <img src="images/retail-dashboard-overview.png" alt="Anonymized retail operations QuickSight dashboard" class="w-full h-full object-cover opacity-90 group-hover:scale-[1.02] transition duration-300">
+                    <div class="absolute inset-0 flex items-end justify-start p-3 pointer-events-none">
+                        <span class="text-[10px] font-semibold text-white bg-slate-900/70 px-2 py-1 rounded backdrop-blur-sm">Company &amp; date redacted</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 2: Orders &amp; Sales by Region (YTD, anonymized scale)</span>
+                <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 p-4" style="height:200px; position:relative;">
+                    <canvas id="retailRegionChart" role="img" aria-label="Grouped bar chart showing orders and sales by region: West, Central, East.">Orders by region: West 78K / 12M SAR, Central 58K / 10M SAR, East 20K / 3M SAR.</canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fulfilment donut + Category bar -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+            <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Delivered orders — fulfilment split (YTD)</span>
+                <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 p-4" style="height:180px; position:relative;">
+                    <canvas id="retailFulfilChart" role="img" aria-label="Donut chart: 86% partially delivered, 14% fully delivered out of 136K delivered orders.">86% partially delivered, 14% fully delivered.</canvas>
+                </div>
+            </div>
+            <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Order share by category (YTD)</span>
+                <div class="bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-700 p-4" style="height:180px; position:relative;">
+                    <canvas id="retailCatChart" role="img" aria-label="Horizontal bar chart of order share by category. Fresh leads at 15%.">Fresh 15%, Breakfast/Frozen/Beverages/Cooking Essentials/Household each 11%, Food Basics 10%, Snacks 8%, Bakery 7%.</canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">AWS QuickSight</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">SQL / Data Modeling</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">ETL Pipeline</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">KPI Framework Design</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Retail Analytics</span>
+            <span class="px-2.5 py-1 text-xs font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 rounded">Python</span>
+        </div>
+    </div>
+    <span class="text-sm font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1 cursor-not-allowed">
+        Corporate Infrastructure Source (Private) <i class="fas fa-lock text-xs"></i>
+    </span>
+</div>
+<!-- ── END RETAIL DASHBOARD ── -->
+
             <div class="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition flex flex-col justify-between">
                 <div>
                     <div class="flex items-center space-x-2 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-3">
