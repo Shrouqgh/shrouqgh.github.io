@@ -250,7 +250,7 @@
                         Designed and implemented an executive-facing analytics layer consolidating order lifecycle metrics, regional performance, fulfilment status, and category-level sales for a large-scale omnichannel grocery retailer operating across 14 branches. Modeled raw transactional data into reusable KPI tables in SQL, wired ETL pipelines into AWS QuickSight, and authored calculated fields to surface AOV, cancellation rate, and delivery fulfilment ratios. Dashboard was consumed daily by ops and commercial leadership.
                     </p>
 
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
                         <div>
                             <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2.5">Figure 1: Live QuickSight Dashboard — Orders &amp; Sales Overview</span>
                             <div class="relative bg-slate-100 dark:bg-slate-950 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-900 aspect-video group/img">
@@ -259,6 +259,20 @@
                                 <div class="absolute bottom-3 left-3 pointer-events-none">
                                     <span class="text-[9px] font-semibold text-white bg-slate-900/75 px-2 py-0.5 rounded backdrop-blur-sm tracking-wide">Company &amp; date redacted</span>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2.5">Figure 2: SQL Aggregation Model &amp; KPI Layer Logic</span>
+                            <div class="bg-slate-950 rounded-lg border border-slate-900 p-4 aspect-video text-[11px] font-mono text-emerald-400 overflow-y-auto leading-normal select-none shadow-inner">
+                                <div class="text-slate-500 mb-1">-- Real-time KPI table materialization layer</div>
+                                <span class="text-purple-400">SELECT</span><br>
+                                &nbsp;&nbsp;branch_id, <span class="text-blue-400">COUNT</span>(order_id) <span class="text-purple-400">AS</span> total_orders,<br>
+                                &nbsp;&nbsp;<span class="text-blue-400">SUM</span>(net_sales_sar) <span class="text-purple-400">AS</span> ytd_revenue,<br>
+                                &nbsp;&nbsp;<span class="text-blue-400">ROUND</span>(<span class="text-blue-400">AVG</span>(basket_value), <span class="text-amber-400">2</span>) <span class="text-purple-400">AS</span> aov<br>
+                                <span class="text-purple-400">FROM</span> data_warehouse.retail_orders_anonymized<br>
+                                <span class="text-purple-400">WHERE</span> order_status = <span class="text-amber-300">'DELIVERED'</span><br>
+                                <span class="text-purple-400">GROUP BY</span> <span class="text-amber-400">1</span>;
                             </div>
                         </div>
                     </div>
@@ -272,19 +286,18 @@
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">Retail Analytics</span>
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">Python</span>
                     </div>
-                    <span class="text-sm font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1.5 cursor-not-allowed selection:bg-transparent">
+                    <span class="text-sm font-bold text-slate-400 dark:text-slate-50 flex items-center gap-1.5 cursor-not-allowed selection:bg-transparent">
                         Corporate Infrastructure Source (Private) <i class="fas fa-lock text-xs text-slate-400/80"></i>
                     </span>
                 </div>
             </div>
-
             <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full min-h-[340px]">
                 <div>
                     <div class="flex items-center space-x-2 text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
                         <span class="p-1.5 rounded-md bg-blue-50 dark:bg-slate-900 border border-blue-100 dark:border-slate-800"><i class="fas fa-database"></i></span>
                         <span>Data Identity & Automation</span>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Scalable Entity Resolution & Deduplication Pipeline</h3>
+                    h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Scalable Entity Resolution & Deduplication Pipeline</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Designed an automated entity linkage architecture to resolve disparate records across high-volume relational tables. Implemented custom blocking schemas and string distance metrics to cleanly structure identity clusters, minimizing computational complexity while scaling verification loops.
                     </p>
@@ -319,7 +332,7 @@
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">LightGBM / XGBoost</span>
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">Feature Engineering</span>
                     </div>
-                    <span class="text-sm font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1.5 cursor-not-allowed selection:bg-transparent">
+                    <span class="text-sm font-bold text-slate-400 dark:text-slate-50 flex items-center gap-1.5 cursor-not-allowed selection:bg-transparent">
                         Corporate Infrastructure Source (Private) <i class="fas fa-lock text-xs text-slate-400/80"></i>
                     </span>
                 </div>
@@ -343,7 +356,7 @@
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">Collaborative Filtering</span>
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">Propensity Scoring</span>
                     </div>
-                    <span class="text-sm font-bold text-slate-400 dark:text-slate-500 flex items-center gap-1.5 cursor-not-allowed selection:bg-transparent">
+                    <span class="text-sm font-bold text-slate-400 dark:text-slate-50 flex items-center gap-1.5 cursor-not-allowed selection:bg-transparent">
                         Corporate Infrastructure Source (Private) <i class="fas fa-lock text-xs text-slate-400/80"></i>
                     </span>
                 </div>
