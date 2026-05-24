@@ -137,9 +137,9 @@
             </span>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
             
-            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full min-h-[340px]">
+            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
                 <div>
                     <div class="flex items-center space-x-2 text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
                         <span class="p-1.5 rounded-md bg-blue-50 dark:bg-slate-900 border border-blue-100 dark:border-slate-800"><i class="fas fa-layer-group"></i></span>
@@ -163,7 +163,7 @@
                 </div>
             </div>
 
-            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full min-h-[340px]">
+            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
                 <div>
                     <div class="flex items-center space-x-2 text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
                         <span class="p-1.5 rounded-md bg-blue-50 dark:bg-slate-900 border border-blue-100 dark:border-slate-800"><i class="fas fa-chart-line"></i></span>
@@ -186,45 +186,29 @@
                 </div>
             </div>
 
-            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between md:col-span-2">
+            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
                 <div>
                     <div class="flex items-center space-x-2 text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
                         <span class="p-1.5 rounded-md bg-blue-50 dark:bg-slate-900 border border-blue-100 dark:border-slate-800"><i class="fas fa-network-wired"></i></span>
                         <span>Data Pipeline & API Engineering</span>
                     </div>
-                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">YouTube Safety Index: Traffic Interception & Ingestion Pipeline</h3>
-                    
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">YouTube Safety Index Pipeline</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Architected a real-time monitoring infrastructure to capture network traffic for automated safety moderation. Configured an SSL-decrypted proxy server environment to parse streaming data with an average 250ms latency baseline, engineered Python extraction algorithms to isolate distinct content IDs, and built an automated ingestion loop into Elasticsearch. Developed high-throughput REST API endpoints to securely expose real-time threat indices and pipeline diagnostic telemetry.
+                        Architected a real-time monitoring ingestion infrastructure to capture network traffic parameters below 250ms baselines. Extracted explicit content logs using parsing scripts into custom downstream Elasticsearch architectures to safely isolate and flag real-time system diagnostic metrics.
                     </p>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
-                        <div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2.5">Figure 1: Live Gateway Traffic Interception & Decryption Stream</span>
-                            <div class="relative bg-slate-100 dark:bg-slate-950 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-900 aspect-video group/img">
-                                <img src="images/youtube-pipeline-stream.png" alt="Gateway Decryption Stream" class="w-full h-full object-cover opacity-90 group-hover/img:scale-[1.03] transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2.5">Figure 2: Model Performance Metrics & Validation Curves</span>
-                            <div class="relative bg-slate-100 dark:bg-slate-950 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-900 aspect-video group/img">
-                                <img src="images/youtube-validation-metrics_2.png" alt="Scikit-Learn Validation Diagnostics" class="w-full h-full object-cover opacity-90 group-hover/img:scale-[1.03] transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent pointer-events-none"></div>
-                            </div>
+                    <div class="w-full my-6">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 1: Live Gateway Traffic Interception Stream</span>
+                        <div class="relative bg-slate-100 dark:bg-slate-950 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-900 w-full aspect-video group/img">
+                            <img src="images/youtube-pipeline-stream.png" alt="Gateway Decryption Stream" class="w-full h-full object-cover opacity-90 group-hover/img:scale-[1.02] transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
                         </div>
                     </div>
-                
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Powered downstream BERT inference pipelines optimized for threat detection, identifying malicious or unsafe material with a specialized 0.88 F1-score and an 83% overall verification accuracy layout baseline.
-                    </p>
                 </div>
                 <div>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">REST API Design</span>
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">Python (ETL)</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">ML Framework: BERT</span>
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">Elasticsearch</span>
                     </div>
                     <a href="https://github.com/Shrouqgh/youtube-safety-index-pipeline" target="_blank" class="text-sm font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-all flex items-center gap-1 group/link">
@@ -233,57 +217,47 @@
                 </div>
             </div>
 
-        
-            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between md:col-span-2">
+            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
                 <div>
                     <div class="flex items-center justify-between flex-wrap gap-4 mb-4">
                         <div class="flex items-center space-x-2 text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">
                             <span class="p-1.5 rounded-md bg-blue-50 dark:bg-slate-900 border border-blue-100 dark:border-slate-800"><i class="fas fa-chart-pie"></i></span>
-                            <span>Retail Intelligence &amp; KPI Architecture</span>
+                            <span>Retail Intelligence Frameworks</span>
                         </div>
-                        <span class="text-[10px] font-semibold px-2.5 py-1 bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 rounded-full border border-slate-200 dark:border-slate-800 flex items-center gap-1">
-                            <i class="fas fa-lock text-[9px] text-slate-400"></i> NDA — data &amp; client anonymized
-                        </span>
+                        <span class="text-[9px] font-semibold px-2 py-0.5 bg-slate-100 dark:bg-slate-900 text-slate-500 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800"><i class="fas fa-lock mr-1"></i>NDA Anonymized</span>
                     </div>
-
-                    <h3 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Retail Operations Analytics Dashboard — Executive KPI Layer</h3>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Retail Operations Analytics Dashboard</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Designed and implemented an executive-facing analytics layer consolidating order lifecycle metrics, regional performance, fulfilment status, and category-level sales for a large-scale omnichannel grocery retailer operating across 14 branches. Modeled raw transactional data into reusable KPI tables in SQL, wired ETL pipelines into AWS QuickSight, and authored calculated fields to surface AOV, cancellation rate, and delivery fulfilment ratios. Dashboard was consumed daily by ops and commercial leadership.
+                        Designed and implemented an executive-facing analytics layer consolidating raw order lifecycle metrics across 14 branches. Modeled reusable KPI tables inside SQL to surface real-time AOV, cancellation rates, and fulfillment ratios inside AWS QuickSight ecosystems.
                     </p>
 
-                    <div class="w-full my-8">
-                        <div>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2.5">Live QuickSight Dashboard — Orders &amp; Sales Overview</span>
-                            <div class="relative bg-slate-100 dark:bg-slate-950 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-900 aspect-video group/img">
-                                <img src="images/retail-dashboard-overview.png" alt="Anonymized retail operations dashboard Overview" class="w-full h-full object-cover opacity-90 group-hover/img:scale-[1.03] transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent pointer-events-none"></div>
-                                <div class="absolute bottom-3 left-3 pointer-events-none">
-                                </div>
-                            </div>
+                    <div class="w-full my-6">
+                        <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 block mb-2">Figure 1: Live QuickSight Dashboard — Orders &amp; Sales Overview</span>
+                        <div class="relative bg-slate-100 dark:bg-slate-950 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-900 w-full aspect-video group/img">
+                            <img src="images/retail-dashboard-overview.png" alt="Anonymized retail operations dashboard Overview" class="w-full h-full object-cover opacity-90 group-hover/img:scale-[1.02] transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent pointer-events-none"></div>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">AWS QuickSight</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">SQL / Data Modeling</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">ETL Pipeline</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">KPI Framework Design</span>
+                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">SQL Modeling</span>
                         <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">Retail Analytics</span>
-                        <span class="px-2.5 py-1 text-xs font-medium bg-slate-50 dark:bg-slate-900 text-slate-600 dark:text-slate-400 rounded border border-slate-200 dark:border-slate-800">Python</span>
                     </div>
                     <span class="text-sm font-bold text-slate-400 dark:text-slate-50 flex items-center gap-1.5 cursor-not-allowed selection:bg-transparent">
                         Corporate Infrastructure Source (Private) <i class="fas fa-lock text-xs text-slate-400/80"></i>
                     </span>
                 </div>
             </div>
-            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full min-h-[340px]">
+
+            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
                 <div>
                     <div class="flex items-center space-x-2 text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
                         <span class="p-1.5 rounded-md bg-blue-50 dark:bg-slate-900 border border-blue-100 dark:border-slate-800"><i class="fas fa-database"></i></span>
                         <span>Data Identity & Automation</span>
                     </div>
-                    h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Scalable Entity Resolution & Deduplication Pipeline</h3>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Scalable Entity Resolution & Deduplication Pipeline</h3>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
                         Designed an automated entity linkage architecture to resolve disparate records across high-volume relational tables. Implemented custom blocking schemas and string distance metrics to cleanly structure identity clusters, minimizing computational complexity while scaling verification loops.
                     </p>
@@ -301,7 +275,7 @@
                 </div>
             </div>
 
-            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full min-h-[340px]">
+            <div class="group bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-8 hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
                 <div>
                     <div class="flex items-center space-x-2 text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-4">
                         <span class="p-1.5 rounded-md bg-blue-50 dark:bg-slate-900 border border-blue-100 dark:border-slate-800"><i class="fas fa-boxes"></i></span>
