@@ -122,6 +122,39 @@
       cursor: pointer; color: var(--text-2); padding: 6px;
     }
 
+    /* ── Hero layout ──────────────────────────────────────────────── */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-photo-col { display: flex; justify-content: center; align-items: flex-start; }
+    .hero-photo-frame {
+      width: 240px; height: 280px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid var(--accent-pale2);
+      box-shadow: 0 20px 48px rgba(192,98,42,.15), 0 0 0 8px var(--accent-pale);
+      background: var(--bg-tint);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .hero-photo-frame img {
+      width: 100%; height: 100%; object-fit: cover; object-position: top center;
+    }
+    .photo-fallback {
+      display: none;
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 12px; width: 100%; height: 100%;
+      color: var(--text-3); font-size: 12px; text-align: center; line-height: 1.5;
+    }
+    .photo-fallback i { font-size: 40px; color: var(--border-2); }
+    @media (max-width: 860px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-photo-col { order: -1; }
+      .hero-photo-frame { width: 120px; height: 140px; border-radius: 14px; }
+    }
     /* ── Hero ─────────────────────────────────────────────────────── */
     .hero { padding: 88px 0 64px; }
     .hero-eyebrow {
@@ -485,27 +518,41 @@
 <!-- HERO -->
 <section id="about" class="hero">
   <div class="container">
-    <div class="hero-eyebrow reveal">
-      <span class="dot"></span>
-      Open to new opportunities
-    </div>
-    <h1 class="reveal" style="transition-delay:.07s">
-      I turn messy data into<br>
-      <em>decisions that stick.</em>
-    </h1>
-    <p class="hero-bio reveal" style="transition-delay:.14s">
-      I'm Shrouq — a senior Data Scientist and Strategy Consultant who builds the kind of ML systems that actually get used. My work spans fraud detection, customer segmentation, demand forecasting, and recommendation engines, always with one eye on the code and the other on the business outcome it drives.
-    </p>
-    <p class="hero-aside reveal" style="transition-delay:.18s">When I'm offline, you'll usually find me on a run, on the tennis court, or enjoying an off-screen time at the beach </p>
-    <div class="hero-actions reveal" style="transition-delay:.22s">
-      <a href="#portfolio" class="btn-primary">See my work</a>
-      <a href="resume.pdf" download class="btn-outline"><i class="fas fa-download" style="margin-right:8px;font-size:12px"></i>Download CV</a>
-    </div>
-    <div class="hero-social reveal" style="transition-delay:.26s">
-      <a href="mailto:shrouq.ghamdi.ds@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/shrouq-alghamdi" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/shrouqgh" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-      <span class="hero-location"><i class="fas fa-map-marker-alt"></i> US &amp; Saudi Arabia</span>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow reveal">
+          <span class="dot"></span>
+          Open to new opportunities
+        </div>
+        <h1 class="reveal" style="transition-delay:.07s">
+          I turn messy data into<br>
+          <em>decisions that stick.</em>
+        </h1>
+        <p class="hero-bio reveal" style="transition-delay:.14s">
+          I'm Shrouq — a senior Data Scientist and Strategy Consultant who builds the kind of ML systems that actually get used. My work spans fraud detection, customer segmentation, demand forecasting, and recommendation engines, always with one eye on the code and the other on the business outcome it drives.
+        </p>
+        <p class="hero-aside reveal" style="transition-delay:.18s">When I'm offline, you'll usually find me on a run, on the tennis court, or enjoying an off-screen time at the beach </p>
+        <div class="hero-actions reveal" style="transition-delay:.22s">
+          <a href="#portfolio" class="btn-primary">See my work</a>
+          <a href="resume.pdf" download class="btn-outline"><i class="fas fa-download" style="margin-right:8px;font-size:12px"></i>Download CV</a>
+        </div>
+        <div class="hero-social reveal" style="transition-delay:.26s">
+          <a href="mailto:shrouq.ghamdi.ds@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://linkedin.com/in/shrouq-alghamdi" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/shrouqgh" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+          <span class="hero-location"><i class="fas fa-map-marker-alt"></i> US &amp; Saudi Arabia</span>
+        </div>
+      </div>
+      <div class="hero-photo-col reveal" style="transition-delay:.1s">
+        <div class="hero-photo-frame">
+          <img src="images/personal-photo.jpg" alt="Shrouq Alghamdi"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="photo-fallback">
+            <i class="fas fa-user"></i>
+            <span>Add photo as<br>images/photo.jpg</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -790,69 +837,87 @@
 
 <script data-goatcounter="https://shrouqgh.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>
+document.addEventListener('DOMContentLoaded', () => {
+
   // ── Theme toggle
-  const btn = document.getElementById('theme-btn');
-  const sun = document.getElementById('icon-sun');
+  const btn  = document.getElementById('theme-btn');
+  const sun  = document.getElementById('icon-sun');
   const moon = document.getElementById('icon-moon');
+
   function applyTheme(t) {
     document.documentElement.setAttribute('data-theme', t);
-    sun.style.display  = t === 'dark' ? 'block' : 'none';
-    moon.style.display = t === 'dark' ? 'none'  : 'block';
+    if (sun && moon) {
+      sun.style.display  = t === 'dark' ? 'block' : 'none';
+      moon.style.display = t === 'dark' ? 'none'  : 'block';
+    }
   }
+
+  // Read the theme already set by the inline script in <head>
   applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
-  btn.addEventListener('click', () => {
-    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
-    localStorage.setItem('portfolio-theme', next);
-  });
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem('portfolio-theme', next);
+    });
+  }
 
   // ── Hamburger
-  document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('nav-desktop').classList.toggle('open');
-  });
+  const hamburger = document.getElementById('hamburger');
+  const navDesktop = document.getElementById('nav-desktop');
+  if (hamburger && navDesktop) {
+    hamburger.addEventListener('click', () => navDesktop.classList.toggle('open'));
+  }
 
   // ── Contact form with status
-  const form = document.getElementById('contact-form');
-  const status = document.getElementById('form-status');
+  const form      = document.getElementById('contact-form');
+  const status    = document.getElementById('form-status');
   const submitBtn = document.getElementById('submit-btn');
-  const btnText = document.getElementById('btn-text');
-  const btnIcon = document.getElementById('btn-icon');
+  const btnText   = document.getElementById('btn-text');
+  const btnIcon   = document.getElementById('btn-icon');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    btnText.textContent = 'Sending…';
-    btnIcon.className = 'fas fa-spinner fa-spin';
-    submitBtn.disabled = true;
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        status.textContent = '✓ Message sent! I'll get back to you soon.';
-        status.className = 'form-status success';
-        form.reset();
-        btnText.textContent = 'Message Sent';
-        btnIcon.className = 'fas fa-check';
-      } else {
-        throw new Error();
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      btnText.textContent = 'Sending…';
+      btnIcon.className = 'fas fa-spinner fa-spin';
+      submitBtn.disabled = true;
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          status.textContent = '✓ Message sent! I\'ll get back to you soon.';
+          status.className = 'form-status success';
+          form.reset();
+          btnText.textContent = 'Message Sent';
+          btnIcon.className = 'fas fa-check';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        status.textContent = '⚠ Something went wrong. Please email me directly at shrouq.ghamdi.ds@gmail.com';
+        status.className = 'form-status error';
+        btnText.textContent = 'Send Message';
+        btnIcon.className = 'fas fa-paper-plane';
+        submitBtn.disabled = false;
       }
-    } catch {
-      status.textContent = '⚠ Something went wrong. Please email me directly at shrouq.ghamdi.ds@gmail.com';
-      status.className = 'form-status error';
-      btnText.textContent = 'Send Message';
-      btnIcon.className = 'fas fa-paper-plane';
-      submitBtn.disabled = false;
-    }
-  });
+    });
+  }
 
-  // ── Scroll reveal (progressive enhancement — content visible without JS)
+  // ── Scroll reveal (progressive enhancement)
   document.documentElement.classList.add('js-reveal-ready');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+}); // end DOMContentLoaded
 </script>
 </body>
 </html>
