@@ -486,7 +486,6 @@
     }
 
     /* ── Scroll reveal ────────────────────────────────────────────── */
-    /* Content visible by default; JS adds .js-reveal-ready to <html> to opt-in to animations */
     html.js-reveal-ready .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s, transform .6s; }
     html.js-reveal-ready .reveal.visible { opacity: 1; transform: none; }
   </style>
@@ -503,7 +502,7 @@
     <div class="nav-links nav-desktop" id="nav-desktop">
       <a href="#about">About</a>
       <a href="#skills">Expertise</a>
-      <a href="#portfolio">Work</a>
+      <a href="projects.html">Projects</a>
       <a href="#contact">Contact</a>
       <!--<a href="shrouq_alghamdi_resume.pdf" download class="nav-cv"><i class="fas fa-download" style="margin-right:6px;font-size:11px"></i>Download CV</a>-->
       <button id="theme-btn" aria-label="Toggle theme">
@@ -607,8 +606,8 @@
 <section id="portfolio" class="portfolio">
   <div class="container">
     <div class="portfolio-header">
-      <h2 class="reveal">Selected Projects</h2>
-      <span class="tag reveal" style="transition-delay:.1s"><i class="fas fa-shield-alt"></i> NDA-compliant where noted</span>
+      <h2 class="reveal">Featured Projects</h2>
+      <a href="projects.html" class="tag reveal" style="transition-delay:.1s"><i class="fas fa-th-large"></i> View all projects <i class="fas fa-arrow-right" style="margin-left:4px"></i></a>
     </div>
     <div class="projects-grid">
 
@@ -632,75 +631,7 @@
         </div>
       </div>
 
-      <!-- 2 -->
-      <div class="project-card reveal" style="transition-delay:.08s">
-        <div>
-          <div class="card-eyebrow">
-            <div class="card-category"><i class="fas fa-chart-line"></i> Attribution</div>
-          </div>
-          <h3>Campaign Analytics &amp; Association Rules</h3>
-          <p>Built a post-campaign analysis framework to understand why some promotions worked and others didn't. Used Apriori-based association rule mining to surface cross-department purchase patterns, confirming an 11–32% performance range across campaigns and a 26% feature attachment rate that informed the next round of targeting strategy.</p>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">Market Basket Analysis</span>
-            <span class="tag">Attribution Modeling</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/shrouqgh/campaign-lifecycle-analytics" target="_blank" rel="noopener" class="card-link">
-            View on GitHub <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
 
-      <!-- 3 -->
-      <div class="project-card reveal">
-        <div>
-          <div class="card-eyebrow">
-            <div class="card-category"><i class="fas fa-network-wired"></i> Pipeline Engineering</div>
-          </div>
-          <h3>YouTube Safety Index Pipeline</h3>
-          <p>Built a real-time content monitoring pipeline to flag unsafe YouTube content at scale. The system ingests network traffic under 250ms, parses content signals with custom Python ETL scripts, and routes flagged records into an Elasticsearch index for fast downstream querying. Think of it as a safety filter that never sleeps.</p>
-          <div class="img-caption" style="margin-top:16px">Live gateway traffic stream</div>
-          <div class="project-img-wrap">
-            <img src="images/youtube-pipeline-stream.png" alt="YouTube pipeline traffic stream screenshot" />
-          </div>
-          <div class="tags">
-            <span class="tag">REST API</span><span class="tag">Python (ETL)</span>
-            <span class="tag">Elasticsearch</span>
-            <span class="tag">BERT Model</span>
-            <span class"tag">SSL Bumping</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/Shrouqgh/youtube-safety-index-pipeline" target="_blank" rel="noopener" class="card-link">
-            View on GitHub <i class="fas fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="project-card reveal" style="transition-delay:.08s">
-        <div>
-          <div class="card-eyebrow">
-            <div class="card-category"><i class="fas fa-chart-pie"></i> Business Intelligence</div>
-            <span class="nda-badge"><i class="fas fa-lock"></i> NDA</span>
-          </div>
-          <h3>Retail Operations Dashboard</h3>
-          <p>A retail chain running 14 branches had no single view of what was happening across the business. I designed an executive analytics layer in AWS QuickSight - built on reusable SQL KPI models — that surfaced live AOV, cancellation rates, and fulfillment ratios in one place. Leadership could finally see the whole picture.</p>
-          <div class="img-caption" style="margin-top:16px">Live QuickSight dashboard — orders &amp; sales overview (anonymized)</div>
-          <div class="project-img-wrap">
-            <img src="images/retail-dashboard-overview.png" alt="Anonymized retail operations QuickSight dashboard" />
-          </div>
-          <div class="tags">
-            <span class="tag">AWS QuickSight</span><span class="tag">SQL</span>
-            <span class="tag">Retail Analytics</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="nda-note">Source is proprietary</div>
-          <span class="card-link-disabled"><i class="fas fa-lock"></i> Private repository</span>
-        </div>
-      </div>
 
       <!-- 5 -->
       <div class="project-card reveal">
@@ -719,46 +650,6 @@
           <a href="https://github.com/Shrouqgh/pitt-ucis-projects" target="_blank" rel="noopener" class="card-link">
             View on GitHub <i class="fas fa-arrow-right"></i>
           </a>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="project-card reveal" style="transition-delay:.08s">
-        <div>
-          <div class="card-eyebrow">
-            <div class="card-category"><i class="fas fa-boxes"></i> Supply Chain</div>
-            <span class="nda-badge"><i class="fas fa-lock"></i> NDA</span>
-          </div>
-          <h3>Demand Forecasting Engine</h3>
-          <p>Seasonal spikes in retail are predictable — until they're not. I engineered an end-to-end forecasting pipeline using LightGBM and structural time-series models to predict daily product demand across regional distribution hubs. The model integrated historical transaction data with live promotional signals to stay accurate even during demand outliers.</p>
-          <div class="tags">
-            <span class="tag">Time-Series</span><span class="tag">LightGBM</span>
-            <span class="tag">Feature Engineering</span>
-          </div>
-        </div>
-        <div class="card-footer">
-          <div class="nda-note">Built on corporate infrastructure — available to discuss in detail during interviews.</div>
-          <span class="card-link-disabled"><i class="fas fa-lock"></i> Private repository</span>
-        </div>
-      </div>
-
-      <!-- 7 (full width) -->
-      <div class="project-card reveal" style="transition-delay:.08s">
-        <div>
-          <div class="card-eyebrow">
-            <div class="card-category"><i class="fas fa-shopping-basket"></i> Personalization</div>
-            <span class="nda-badge"><i class="fas fa-lock"></i> NDA</span>
-          </div>
-          <h3>Purchase Propensity &amp; Cross-Sell Engine</h3>
-          <p>Designed a real-time personalization framework that scores a customer's likelihood to buy — and what to recommend next — at the moment of checkout. The system uses collaborative filtering on historical basket data and live clickstream signals to surface relevant cross-sells. Deployed at checkout where it matters most.</p>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">SQL / Warehouse</span>
-            <span class="tag">Collaborative Filtering</span><span class="tag">Propensity Scoring</span>
-          </div>
-        </div>
-        <div class="card-footer" style="margin-top:16px">
-          <div class="nda-note">Architecture overview available on request - happy to walk through the design.</div>
-          <span class="card-link-disabled"><i class="fas fa-lock"></i> Private repository</span>
         </div>
       </div>
 
@@ -926,7 +817,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Scroll reveal (progressive enhancement)
   document.documentElement.classList.add('js-reveal-ready');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -935,7 +825,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-}); // end DOMContentLoaded
+});
 </script>
 </body>
 </html>
