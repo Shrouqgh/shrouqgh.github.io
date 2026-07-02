@@ -214,6 +214,17 @@
       background: var(--bg-tint); border: 1px solid var(--border);
     }
     .hero-location i { color: var(--accent); }
+    .btn-view-all {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px; border-radius: 8px;
+      background: var(--accent-pale); border: 1px solid var(--accent-pale2);
+      color: var(--accent); font-size: 13px; font-weight: 600;
+      transition: background .2s, border-color .2s, transform .15s;
+    }
+    .btn-view-all:hover {
+      background: var(--accent); color: #fff;
+      transform: translateY(-2px);
+    }
 
     /* ── Stats strip ──────────────────────────────────────────────── */
     .stats-strip {
@@ -612,7 +623,7 @@
   <div class="container">
     <div class="portfolio-header">
       <h2 class="reveal">Featured Projects</h2>
-      <a href="projects-page.html" class="tag reveal" style="transition-delay:.1s"><i class="fas fa-th-large"></i> View all projects <i class="fas fa-arrow-right" style="margin-left:4px"></i></a>
+      <a href="projects-page.html" class="btn-view-all reveal" style="transition-delay:.1s"><i class="fas fa-th-large"></i> View all projects <i class="fas fa-arrow-right" style="margin-left:4px"></i></a>
     </div>
     <div class="projects-grid">
 
